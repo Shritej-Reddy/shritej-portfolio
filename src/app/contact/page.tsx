@@ -9,13 +9,17 @@ export default function ContactPage() {
       transition={{ duration: 0.6 }}
       className="max-w-3xl mx-auto py-20 px-4"
     >
-      <h1 className="text-4xl font-bold mb-6 text-[#F4631E]">Let&apos;s Talk</h1>
-      <p className="text-muted-foreground text-lg mb-4">
-        Feel free to drop me a message — whether it’s a project, opportunity, or just a hello.
+      <h1 className="text-4xl font-bold mb-6 text-[#F4631E]">Let’s Work Together</h1>
+      <p className="text-muted-foreground text-lg mb-6">
+        Fill out the form below and I’ll get back to you as soon as possible.
       </p>
-      <a href="mailto:youremail@example.com" className="underline text-[#309898]">
-        youremail@example.com
-      </a>
+      <iframe
+        src="https://tally.so/r/3lZOkk"
+        width="100%"
+        height="500"
+        className="rounded-md border border-muted"
+        title="Contact Form"
+      />
     </motion.section>
   );
 }

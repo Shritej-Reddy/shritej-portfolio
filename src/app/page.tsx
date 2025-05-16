@@ -90,7 +90,7 @@ export default function HomePage() {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               viewport={{ once: true, amount: 0.3 }}
             >
-              <Card className="transition-all hover:shadow-xl magnetic relative block will-change-transform">
+              <Card className="group relative block overflow-hidden transition-all hover:scale-[1.015] hover:shadow-2xl hover:border-[#FF9F00]/40 border border-border magnetic will-change-transform">
                 <CardContent className="p-4 sm:p-6 space-y-4">
                   {project.image && (
                     <Image
@@ -102,7 +102,7 @@ export default function HomePage() {
                       priority={i === 0}
                     />
                   )}
-                  <h3 className="text-xl font-bold text-[#FF9F00]">
+                  <h3 className="text-xl font-bold text-[#FF9F00] group-hover:underline underline-offset-4">
                     {project.title}
                   </h3>
                   <p className="text-muted-foreground text-sm">
@@ -112,14 +112,14 @@ export default function HomePage() {
                     <a
                       href={project.live}
                       target="_blank"
-                      className="text-sm underline"
+                      className="text-sm underline hover:text-[#309898] transition"
                     >
                       Live
                     </a>
                     <a
                       href={project.github}
                       target="_blank"
-                      className="text-sm underline"
+                      className="text-sm underline hover:text-[#CB0404] transition"
                     >
                       GitHub
                     </a>
