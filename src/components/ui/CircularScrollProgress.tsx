@@ -12,8 +12,16 @@ export default function CircularScrollProgress() {
   const strokeDashoffset =
     circumference - (scroll / 100) * circumference;
 
+  const handleClick = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
-    <div className="fixed bottom-6 right-6 z-[9999] group cursor-default">
+    <div
+      onClick={handleClick}
+      className="fixed bottom-6 right-6 z-[9999] group cursor-pointer"
+      title="Scroll to top"
+    >
       <svg
         height={radius * 2}
         width={radius * 2}
@@ -54,14 +62,14 @@ export default function CircularScrollProgress() {
         />
       </svg>
 
-      {/* Percentage inside */}
+      {/* Percentage text */}
       <span className="absolute top-1/2 left-1/2 text-[10px] font-semibold text-[#309898] translate-x-[-50%] translate-y-[-50%] select-none">
         {Math.round(scroll)}%
       </span>
 
-      {/* Tooltip on hover */}
+      {/* Tooltip */}
       <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs bg-background px-2 py-1 rounded shadow opacity-0 group-hover:opacity-100 transition-all duration-300 border border-muted text-muted-foreground">
-        Scroll Progress
+        Scroll to top
       </span>
     </div>
   );
