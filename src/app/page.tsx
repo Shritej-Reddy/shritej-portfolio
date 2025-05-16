@@ -1,6 +1,7 @@
 "use client";
 // import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
 import { motion } from "framer-motion";
 // import { useMagneticEffect } from "@/hooks/useMagneticEffect";
 
@@ -35,7 +36,7 @@ export default function HomePage() {
   ];
 
   return (
-    <main className="cursor-none min-h-screen bg-background text-foreground font-sans px-6 py-12 md:px-16">
+    <main className="cursor-none min-h-screen bg-background text-foreground font-sans px-4 sm:px-6 md:px-16 py-12 space-y-24">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
@@ -65,7 +66,7 @@ export default function HomePage() {
         <h2 className="text-3xl font-semibold mb-8 border-b border-[#CB0404] inline-block pb-2">
           Projects
         </h2>
-        <div className="grid md:grid-cols-2 gap-6 magnetic relative">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, i) => (
             <motion.div
               key={i}
@@ -75,12 +76,15 @@ export default function HomePage() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <Card className="transition-all hover:shadow-xl magnetic relative block will-change-transform">
-                <CardContent className="p-6 space-y-4">
+                <CardContent className="p-4 sm:p-6 space-y-4">
                   {project.image && (
-                    <img
-                      src={project.image}
+                    <Image
+                      src={`/${project.image}`}
                       alt={project.title}
-                      className="w-full h-48 object-cover rounded-md border border-muted"
+                      width={600}
+                      height={300}
+                      className="w-full h-auto max-h-48 object-cover rounded-md border border-muted"
+                      priority={i === 0}
                     />
                   )}
                   <h3 className="text-xl font-bold text-[#FF9F00]">
