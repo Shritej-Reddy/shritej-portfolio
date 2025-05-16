@@ -124,4 +124,8 @@
     cursor: none !important;
     @apply bg-background text-foreground;
   }
+  .magnetic {
+    will-change: transform;
+  }
+  
 }

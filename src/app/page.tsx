@@ -2,8 +2,10 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { useMagneticEffect } from "@/hooks/useMagneticEffect";
 
 export default function HomePage() {
+  useMagneticEffect('.magnetic', 0.1);
   return (
     <main className="cursor-none min-h-screen bg-background text-foreground font-sans px-6 py-12 md:px-16">
 
@@ -34,9 +36,9 @@ export default function HomePage() {
         className="max-w-5xl mx-auto"
       >
         <h2 className="text-3xl font-semibold mb-8 border-b border-[#CB0404] inline-block pb-2">
-          Selected Projects
+          Projects
         </h2>
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-6 magnetic relative">
           {[1, 2, 3].map((i) => (
             <Card key={i} className="transition-all hover:shadow-xl">
               <CardContent className="p-6">
