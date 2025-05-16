@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Cursor from "@/components/ui/Cursor";
 import { ThemeProvider } from "next-themes";
+import Navbar from "@/components/ui/Navbar";
 import "./globals.css";
 
 // const inter = Inter({
@@ -36,6 +37,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Cursor />
+          <Navbar />
           {children}
         </ThemeProvider>
       </body>

@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { useMagneticEffect } from "@/hooks/useMagneticEffect";
-import ThemeToggle from "@/components/ui/ThemeToggle";
 
 export default function HomePage() {
   useMagneticEffect('.magnetic', 0.1);
@@ -17,7 +16,6 @@ export default function HomePage() {
         transition={{ duration: 0.8 }}
         className="max-w-4xl mx-auto text-center mb-24"
       >
-        <ThemeToggle />
         <h1 className="text-5xl md:text-7xl font-bold mb-6">
           Hi, I’m <span className="text-[#F4631E]">Shritej</span>
         </h1>
