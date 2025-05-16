@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Cursor from "@/components/ui/Cursor";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 // const inter = Inter({
@@ -33,8 +34,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Cursor />
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Cursor />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
