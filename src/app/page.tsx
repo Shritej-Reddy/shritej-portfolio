@@ -42,17 +42,31 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto text-center mb-24"
+        className="max-w-4xl mx-auto text-center px-4 space-y-6"
       >
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
           Hi, I’m <span className="text-[#F4631E]">Shritej</span>
+          <br />I craft <span className="text-[#309898]">clean</span>,<br />
+          <span className="text-[#FF9F00]">interactive</span> web experiences.
         </h1>
-        <p className="text-xl md:text-2xl text-muted-foreground">
-          I will look for you and I will find you, and I will kill you
+        <p className="text-lg md:text-xl text-muted-foreground mt-6 max-w-2xl mx-auto">
+          Frontend engineer focused on building performant interfaces,
+          delightful user interactions, and creative developer tools.
         </p>
-        <p className="text-xl md:text-2xl text-muted-foreground">
-          Good Luck!!!
-        </p>
+        <div className="mt-8 flex justify-center gap-4">
+          <a
+            href="#projects"
+            className="px-5 py-2 text-sm border border-[#309898] rounded hover:bg-[#309898]/10 transition"
+          >
+            View Projects
+          </a>
+          <a
+            href="/contact"
+            className="px-5 py-2 text-sm border border-[#CB0404] rounded hover:bg-[#CB0404]/10 transition"
+          >
+            Contact Me
+          </a>
+        </div>
       </motion.section>
 
       {/* Projects Section */}
@@ -62,6 +76,7 @@ export default function HomePage() {
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
         className="max-w-5xl mx-auto"
+        id="projects"
       >
         <h2 className="text-3xl font-semibold mb-8 border-b border-[#CB0404] inline-block pb-2">
           Projects
