@@ -22,8 +22,8 @@ export default function HomePage() {
       description:
         "Daily curated design inspiration dashboard with trending Dribbble and Behance shots.",
       image: "inspodeck.png",
-      github: "https://github.com/Shritej-Reddy/inspodeck",
-      live: "https://inspodeck.vercel.app/",
+      github: "https://github.com/Shritej-Reddy/InspoDeck",
+      live: "https://inspo-deck.vercel.app/",
     },
     {
       title: "FocusScape",
