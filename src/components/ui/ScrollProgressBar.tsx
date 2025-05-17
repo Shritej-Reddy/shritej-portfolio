@@ -8,7 +8,7 @@ export default function ScrollProgressBar() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setVisible(scroll > 1); // Show only after 1% scroll
+    setVisible(scroll > 1);
   }, [scroll]);
 
   return (

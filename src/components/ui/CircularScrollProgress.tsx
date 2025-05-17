@@ -5,7 +5,7 @@ import { useScrollProgress } from '@/hooks/useScrollProgress';
 export default function CircularScrollProgress() {
   const scroll = useScrollProgress();
 
-  const radius = 20;
+  const radius = 25;
   const stroke = 3;
   const normalizedRadius = radius - stroke * 2;
   const circumference = normalizedRadius * 2 * Math.PI;
