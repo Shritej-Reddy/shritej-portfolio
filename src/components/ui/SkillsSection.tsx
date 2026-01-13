@@ -11,6 +11,18 @@ import {
   Smartphone,
   Zap,
   GitBranch,
+  Cloud,
+  TestTube,
+  Brain,
+  Lock,
+  Layers,
+  Box,
+  Network,
+  FileCode,
+  Server,
+  Container,
+  Rocket,
+  BarChart3,
 } from "lucide-react";
 
 interface Skill {
@@ -21,26 +33,134 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  // Frontend
-  { name: "React", level: 90, category: "Frontend", icon: <Code /> },
-  { name: "Next.js", level: 85, category: "Frontend", icon: <Globe /> },
-  { name: "TypeScript", level: 88, category: "Frontend", icon: <Code /> },
-  { name: "Tailwind CSS", level: 92, category: "Frontend", icon: <Palette /> },
-  { name: "JavaScript", level: 90, category: "Frontend", icon: <Code /> },
-  { name: "HTML/CSS", level: 95, category: "Frontend", icon: <Code /> },
+  // Frontend Core
+  { name: "JavaScript (ES6+)", level: 95, category: "Frontend", icon: <Code /> },
+  { name: "TypeScript", level: 92, category: "Frontend", icon: <Code /> },
+  { name: "HTML5", level: 95, category: "Frontend", icon: <FileCode /> },
+  { name: "CSS3", level: 95, category: "Frontend", icon: <Palette /> },
   
-  // Tools & Others
-  { name: "Git", level: 85, category: "Tools", icon: <GitBranch /> },
-  { name: "Framer Motion", level: 80, category: "Tools", icon: <Zap /> },
-  { name: "Responsive Design", level: 95, category: "Tools", icon: <Smartphone /> },
-  { name: "Performance Optimization", level: 85, category: "Tools", icon: <Zap /> },
+  // Frontend Frameworks
+  { name: "React (Hooks)", level: 93, category: "Frontend", icon: <Code /> },
+  { name: "Next.js", level: 90, category: "Frontend", icon: <Globe /> },
+  { name: "jQuery", level: 85, category: "Frontend", icon: <Code /> },
+  
+  // Styling & UI
+  { name: "Tailwind CSS", level: 95, category: "Frontend", icon: <Palette /> },
+  { name: "Sass / LESS", level: 88, category: "Frontend", icon: <Palette /> },
+  { name: "Framer Motion", level: 90, category: "Frontend", icon: <Zap /> },
+  { name: "Responsive Design", level: 95, category: "Frontend", icon: <Smartphone /> },
+  { name: "Cross-browser Compatibility", level: 92, category: "Frontend", icon: <Globe /> },
+  { name: "Accessibility (a11y)", level: 88, category: "Frontend", icon: <Settings /> },
+  
+  // Frontend Tooling
+  { name: "Webpack", level: 85, category: "Frontend", icon: <Box /> },
+  { name: "Frontend Performance Optimization", level: 90, category: "Frontend", icon: <Zap /> },
+  { name: "Client-side Caching", level: 88, category: "Frontend", icon: <Zap /> },
+  { name: "Asset Optimization", level: 90, category: "Frontend", icon: <Zap /> },
+  
+  // Backend Languages
+  { name: "Node.js", level: 92, category: "Backend", icon: <Server /> },
+  { name: "Python", level: 90, category: "Backend", icon: <Code /> },
+  { name: "Java", level: 85, category: "Backend", icon: <Code /> },
+  { name: "C#", level: 80, category: "Backend", icon: <Code /> },
+  
+  // Backend Frameworks
+  { name: "Express.js", level: 92, category: "Backend", icon: <Server /> },
+  
+  // API & Communication
+  { name: "REST APIs", level: 95, category: "Backend", icon: <Network /> },
+  { name: "SOAP APIs", level: 85, category: "Backend", icon: <Network /> },
+  { name: "GraphQL", level: 88, category: "Backend", icon: <Network /> },
+  { name: "Swagger / OpenAPI", level: 90, category: "Backend", icon: <FileCode /> },
+  
+  // Auth & Security
+  { name: "OAuth 2.0", level: 90, category: "Backend", icon: <Lock /> },
+  { name: "JWT", level: 92, category: "Backend", icon: <Lock /> },
+  { name: "Role-Based Access Control (RBAC)", level: 88, category: "Backend", icon: <Lock /> },
+  { name: "Secure API Design", level: 90, category: "Backend", icon: <Lock /> },
+  
+  // Backend Patterns
+  { name: "Server-Driven UI", level: 85, category: "Backend", icon: <Layers /> },
+  { name: "Middleware Development", level: 90, category: "Backend", icon: <Layers /> },
+  { name: "Request Lifecycle Optimization", level: 88, category: "Backend", icon: <Zap /> },
+  { name: "Regex-based Search", level: 90, category: "Backend", icon: <Code /> },
+  
+  // Databases
+  { name: "PostgreSQL", level: 92, category: "Database", icon: <Database /> },
+  { name: "SQL", level: 93, category: "Database", icon: <Database /> },
+  { name: "MongoDB", level: 88, category: "Database", icon: <Database /> },
+  { name: "Database Schema Design", level: 90, category: "Database", icon: <Database /> },
+  { name: "Performance Tuning", level: 88, category: "Database", icon: <Zap /> },
+  { name: "Query Optimization", level: 90, category: "Database", icon: <Zap /> },
+  
+  // Cloud & Azure
+  { name: "Azure Function Apps", level: 88, category: "Cloud", icon: <Cloud /> },
+  { name: "Azure Service Bus", level: 85, category: "Cloud", icon: <Cloud /> },
+  { name: "Azure App Services", level: 90, category: "Cloud", icon: <Cloud /> },
+  { name: "Azure App Registration", level: 88, category: "Cloud", icon: <Cloud /> },
+  { name: "Cloud-native Deployments", level: 90, category: "Cloud", icon: <Cloud /> },
+  { name: "Scalable Microservices Architecture", level: 88, category: "Cloud", icon: <Cloud /> },
+  
+  // DevOps
+  { name: "Git", level: 95, category: "DevOps", icon: <GitBranch /> },
+  { name: "GitHub", level: 95, category: "DevOps", icon: <GitBranch /> },
+  { name: "GitHub Actions", level: 90, category: "DevOps", icon: <GitBranch /> },
+  { name: "Docker", level: 88, category: "DevOps", icon: <Container /> },
+  { name: "Containerized Development", level: 88, category: "DevOps", icon: <Container /> },
+  { name: "Deployment Pipelines", level: 90, category: "DevOps", icon: <Rocket /> },
+  
+  // Testing
+  { name: "Jest", level: 90, category: "Testing", icon: <TestTube /> },
+  { name: "Mocha", level: 85, category: "Testing", icon: <TestTube /> },
+  { name: "Code Reviews", level: 92, category: "Testing", icon: <TestTube /> },
+  { name: "Agile Development Practices", level: 90, category: "Testing", icon: <Settings /> },
+  
+  // ML / AI Core
+  { name: "Supervised & Unsupervised Learning", level: 85, category: "ML/AI", icon: <Brain /> },
+  { name: "Feature Engineering", level: 88, category: "ML/AI", icon: <Brain /> },
+  { name: "Model Evaluation & Metrics", level: 85, category: "ML/AI", icon: <BarChart3 /> },
+  { name: "Bias / Variance Tradeoffs", level: 82, category: "ML/AI", icon: <Brain /> },
+  
+  // ML Stack
+  { name: "Python for ML", level: 90, category: "ML/AI", icon: <Code /> },
+  { name: "NumPy", level: 88, category: "ML/AI", icon: <BarChart3 /> },
+  { name: "Pandas", level: 90, category: "ML/AI", icon: <BarChart3 /> },
+  { name: "Scikit-learn", level: 88, category: "ML/AI", icon: <Brain /> },
+  
+  // Deep Learning
+  { name: "PyTorch", level: 85, category: "ML/AI", icon: <Brain /> },
+  { name: "TensorFlow", level: 82, category: "ML/AI", icon: <Brain /> },
+  { name: "Neural Networks", level: 80, category: "ML/AI", icon: <Brain /> },
+  { name: "Training / Validation Pipelines", level: 85, category: "ML/AI", icon: <Layers /> },
+  
+  // Applied AI
+  { name: "Model Inference APIs", level: 88, category: "ML/AI", icon: <Network /> },
+  { name: "AI-powered Feature Integration", level: 90, category: "ML/AI", icon: <Zap /> },
+  { name: "Data Pipelines for ML", level: 88, category: "ML/AI", icon: <Layers /> },
+  { name: "Model Versioning Concepts", level: 85, category: "ML/AI", icon: <Settings /> },
+  
+  // AI Engineering Production
+  { name: "Serving ML Models", level: 88, category: "ML/AI", icon: <Server /> },
+  { name: "API-based Inference", level: 90, category: "ML/AI", icon: <Network /> },
+  { name: "Latency & Cost Optimization", level: 88, category: "ML/AI", icon: <Zap /> },
+  { name: "Monitoring Model Performance", level: 85, category: "ML/AI", icon: <BarChart3 /> },
+  { name: "Data Drift Awareness", level: 82, category: "ML/AI", icon: <BarChart3 /> },
+  
+  // LLM / Modern AI
+  { name: "Prompt Engineering", level: 88, category: "ML/AI", icon: <Brain /> },
+  { name: "Embedding-based Search", level: 85, category: "ML/AI", icon: <Brain /> },
+  { name: "RAG (Retrieval Augmented Generation)", level: 85, category: "ML/AI", icon: <Brain /> },
+  { name: "OpenAI / Open-source LLM APIs", level: 88, category: "ML/AI", icon: <Network /> },
 ];
 
 const categoryIcons: Record<string, React.ReactNode> = {
   Frontend: <Code className="w-5 h-5" />,
-  Backend: <Database className="w-5 h-5" />,
-  Tools: <Settings className="w-5 h-5" />,
-  Design: <Palette className="w-5 h-5" />,
+  Backend: <Server className="w-5 h-5" />,
+  Database: <Database className="w-5 h-5" />,
+  Cloud: <Cloud className="w-5 h-5" />,
+  DevOps: <GitBranch className="w-5 h-5" />,
+  Testing: <TestTube className="w-5 h-5" />,
+  "ML/AI": <Brain className="w-5 h-5" />,
 };
 
 export default function SkillsSection() {
