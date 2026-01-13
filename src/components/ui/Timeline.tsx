@@ -125,8 +125,6 @@ function TimelineItemComponent({
           index % 2 === 0 ? "md:pr-12" : "md:pl-12"
         } cursor-pointer`}
         onClick={() => setIsExpanded(!isExpanded)}
-        whileHover={{ scale: 1.02 }}
-        transition={{ type: "spring", stiffness: 300 }}
       >
         <div className="bg-card border border-border rounded-lg p-6 hover:border-[#FF9F00]/40 transition-all hover:shadow-lg">
           <div className="flex items-start justify-between mb-2">

@@ -126,6 +126,10 @@
   }
   .magnetic {
     will-change: transform;
+    transform: translate3d(0, 0, 0);
+    /* Prevent layout shifts */
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 
   /* Ripple Effect */
@@ -150,10 +154,26 @@
     scroll-behavior: smooth;
   }
 
-  /* Enhanced button interactions */
+  /* Enhanced button interactions - prevent layout shifts */
   button,
-  a[role="button"] {
+  a[role="button"],
+  a.button {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    /* Ensure transforms don't affect layout */
+    transform: translateZ(0);
+  }
+
+  /* Cards and interactive elements */
+  [class*="card"],
+  [class*="Card"] {
+    /* Prevent layout shifts on hover */
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  /* Ensure hover effects don't cause layout shifts */
+  *:hover {
+    /* Only apply if element has transform */
   }
 }

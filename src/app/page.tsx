@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useTypingEffect } from "@/hooks/useTypingEffect";
-import { useMagneticEffect } from "@/hooks/useMagneticEffect";
 import SkillsSection from "@/components/ui/SkillsSection";
 import Timeline from "@/components/ui/Timeline";
 import ProjectModal from "@/components/ui/ProjectModal";
@@ -13,7 +12,8 @@ import Terminal from "@/components/ui/Terminal";
 import { ChevronDown } from "lucide-react";
 
 export default function HomePage() {
-  useMagneticEffect(".magnetic", 0.3);
+  // Only apply magnetic effect to specific elements that need it
+  // Removed from navbar and buttons to prevent layout shifts
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
   const projects = [
@@ -109,13 +109,13 @@ export default function HomePage() {
         <div className="mt-8 flex justify-center gap-4">
           <a
             href="#projects"
-            className="px-5 py-2 text-sm border border-[#309898] rounded hover:bg-[#309898]/10 transition magnetic"
+            className="px-5 py-2 text-sm border border-[#309898] rounded hover:bg-[#309898]/10 transition-colors"
           >
             View Projects
           </a>
           <a
             href="/contact"
-            className="px-5 py-2 text-sm border border-[#CB0404] rounded hover:bg-[#CB0404]/10 transition magnetic"
+            className="px-5 py-2 text-sm border border-[#CB0404] rounded hover:bg-[#CB0404]/10 transition-colors"
           >
             Contact Me
           </a>
@@ -161,7 +161,7 @@ export default function HomePage() {
               viewport={{ once: true, amount: 0.3 }}
             >
               <Card
-                className="group relative block overflow-hidden transition-all hover:scale-[1.015] hover:shadow-2xl hover:border-[#FF9F00]/40 border border-border magnetic will-change-transform cursor-pointer"
+                className="group relative block overflow-hidden transition-all hover:shadow-2xl hover:border-[#FF9F00]/40 border border-border cursor-pointer"
                 onClick={() => setSelectedProject(i)}
               >
                 <CardContent className="p-4 sm:p-6 space-y-4">

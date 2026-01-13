@@ -12,19 +12,19 @@ export default function Navbar() {
 
       {/* Desktop Links */}
       <nav className="hidden md:flex gap-6 items-center text-muted-foreground">
-        <Link href="/#projects" className="hover:text-foreground transition magnetic">
+        <Link href="/#projects" className="hover:text-foreground transition-colors">
           Projects
         </Link>
-        <Link href="/#skills" className="hover:text-foreground transition magnetic">
+        <Link href="/#skills" className="hover:text-foreground transition-colors">
           Skills
         </Link>
-        <Link href="/#experience" className="hover:text-foreground transition magnetic">
+        <Link href="/#experience" className="hover:text-foreground transition-colors">
           Experience
         </Link>
-        <Link href="/about" className="hover:text-foreground transition magnetic">
+        <Link href="/about" className="hover:text-foreground transition-colors">
           About
         </Link>
-        <Link href="/contact" className="hover:text-foreground transition magnetic">
+        <Link href="/contact" className="hover:text-foreground transition-colors">
           Contact
         </Link>
         <ThemeToggle />

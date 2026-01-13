@@ -105,7 +105,7 @@ function SkillCard({ skill, index }: { skill: Skill; index: number }) {
       onHoverEnd={() => setIsHovered(false)}
       className="group relative"
     >
-      <div className="p-6 rounded-lg border border-border bg-card hover:border-[#FF9F00]/40 transition-all hover:shadow-lg hover:scale-[1.02] magnetic will-change-transform">
+      <div className="p-6 rounded-lg border border-border bg-card hover:border-[#FF9F00]/40 transition-all hover:shadow-lg">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <div className="text-[#309898] group-hover:text-[#FF9F00] transition-colors">
