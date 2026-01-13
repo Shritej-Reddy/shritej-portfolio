@@ -249,9 +249,28 @@ function TimelineItemComponent({
               >
                 {isExpanded && (
                   <div className="pt-4 border-t border-border">
-                    <div className="text-sm text-muted-foreground whitespace-pre-line leading-relaxed">
-                      {item.expandedContent}
-                    </div>
+                    <ul className="space-y-3 text-sm text-muted-foreground">
+                      {item.expandedContent
+                        .split("\n")
+                        .filter((line) => line.trim().length > 0)
+                        .map((line, idx) => (
+                          <li
+                            key={idx}
+                            className="flex items-start gap-3 leading-relaxed"
+                          >
+                            <span className="text-[#309898] mt-1.5 flex-shrink-0">
+                              <svg
+                                className="w-1.5 h-1.5"
+                                fill="currentColor"
+                                viewBox="0 0 8 8"
+                              >
+                                <circle cx="4" cy="4" r="4" />
+                              </svg>
+                            </span>
+                            <span className="flex-1">{line.trim()}</span>
+                          </li>
+                        ))}
+                    </ul>
                   </div>
                 )}
               </motion.div>
