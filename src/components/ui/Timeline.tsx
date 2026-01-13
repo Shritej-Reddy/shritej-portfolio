@@ -13,41 +13,117 @@ interface TimelineItem {
   date: string;
   type: "work" | "education" | "achievement";
   tags?: string[];
+  expandedContent?: string;
 }
 
 const timelineItems: TimelineItem[] = [
   {
     id: "1",
-    title: "Frontend Engineer",
-    organization: "Your Company",
-    location: "Remote",
+    title: "Senior Associate – Full Stack / AI Engineer",
+    organization: "PwC (PricewaterhouseCoopers)",
+    location: "",
     description:
-      "Building performant web applications with React and Next.js. Focused on creating delightful user experiences and optimizing performance.",
-    date: "2024 - Present",
+      "Full-stack and AI-focused software engineer building enterprise-grade systems at scale. Worked across frontend, backend, cloud infrastructure, data pipelines, and AI-powered features.",
+    date: "Jan 2021 - Present",
     type: "work",
-    tags: ["React", "Next.js", "TypeScript", "Tailwind"],
+    tags: [
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "GraphQL",
+      "PostgreSQL",
+      "MongoDB",
+      "Azure",
+      "Docker",
+      "Python",
+      "AI/ML",
+    ],
+    expandedContent: `Designed and shipped cloud-native microservices on Azure, supporting scalable, high-traffic enterprise workflows.
+
+Built end-to-end full-stack features, owning system design, API contracts, frontend integration, and deployment.
+
+Integrated AI-assisted workflows into applications (e.g., intelligent search, automation, and data enrichment) using Python-based services and API-driven inference.
+
+Worked on data preprocessing and pipeline design to prepare structured data for downstream ML and analytics use cases.
+
+Designed API-based model inference layers, focusing on low latency, fault tolerance, and cost efficiency.
+
+Implemented secure authentication and authorization using OAuth 2.0, JWT, and role-based access control.
+
+Optimized frontend and backend performance through caching, efficient rendering, and request lifecycle tuning.
+
+Monitored production systems and AI-enabled services, building awareness around model reliability, drift signals, and operational health.
+
+Actively mentored engineers, conducted code reviews, and upheld engineering best practices across teams.
+
+Collaborated in Agile environments with product, data, and business stakeholders to translate ambiguous requirements into robust technical solutions.`,
   },
   {
     id: "2",
-    title: "Software Developer",
-    organization: "Previous Company",
-    location: "City, Country",
+    title: "Project Intern – AR/VR Software Engineer",
+    organization: "SmartVizX",
+    location: "",
     description:
-      "Developed and maintained multiple web applications. Collaborated with cross-functional teams to deliver high-quality products.",
-    date: "2022 - 2024",
+      "Worked on cross-platform AR/VR applications, contributing to immersive 3D experiences across desktop and mobile platforms.",
+    date: "Jan 2019 - Mar 2019",
     type: "work",
-    tags: ["JavaScript", "React", "Node.js"],
+    tags: ["C#", "Unity 3D", "AR/VR", "Cross-platform", "Performance Optimization"],
+    expandedContent: `Developed and optimized interactive AR/VR applications for Windows, iOS, and Android.
+
+Collaborated with designers and engineers to translate requirements into performant 3D systems.
+
+Built strong fundamentals in performance-sensitive software, later applied to backend and distributed systems work.`,
   },
   {
     id: "3",
-    title: "Bachelor's Degree",
-    organization: "University Name",
-    location: "City, Country",
+    title: "Master of Science – Machine Learning & Artificial Intelligence",
+    organization: "Liverpool John Moores University",
+    location: "",
     description:
-      "Studied Computer Science with focus on web development and software engineering.",
-    date: "2018 - 2022",
+      "Advanced academic training in machine learning, deep learning, and applied AI systems, with a strong emphasis on real-world engineering tradeoffs and production readiness.",
+    date: "Jan 2025 - Present",
     type: "education",
-    tags: ["Computer Science", "Web Development"],
+    tags: [
+      "Python",
+      "NumPy",
+      "Pandas",
+      "Scikit-learn",
+      "PyTorch",
+      "TensorFlow",
+      "Neural Networks",
+      "ML Pipelines",
+    ],
+    expandedContent: `Building ML pipelines covering data preparation, training, validation, and inference.
+
+Studying model performance, generalization, and failure modes.
+
+Learning production AI concerns including latency, cost, monitoring, and data drift.
+
+Aligning academic work with applied AI engineering use cases.`,
+  },
+  {
+    id: "4",
+    title: "Bachelor of Engineering – Computer Science & Engineering",
+    organization: "Nitte Meenakshi Institute of Technology, Bangalore",
+    location: "",
+    description:
+      "Strong foundation in computer science fundamentals, software engineering principles, and systems thinking.",
+    date: "Aug 2016 - Sep 2020",
+    type: "education",
+    tags: [
+      "Data Structures & Algorithms",
+      "Object-Oriented Programming",
+      "Databases & SQL",
+      "Operating Systems",
+      "Computer Networks",
+    ],
+    expandedContent: `Completed multiple academic and independent projects across web, systems, and data domains.
+
+Published research on graph-based keyword extraction, reflecting early interest in data-driven systems.`,
   },
 ];
 
@@ -125,8 +201,6 @@ function TimelineItemComponent({
           index % 2 === 0 ? "md:pr-12" : "md:pl-12"
         } cursor-pointer`}
         onClick={() => setIsExpanded(!isExpanded)}
-        whileHover={{ scale: 1.02 }}
-        transition={{ type: "spring", stiffness: 300 }}
       >
         <div className="bg-card border border-border rounded-lg p-6 hover:border-[#FF9F00]/40 transition-all hover:shadow-lg">
           <div className="flex items-start justify-between mb-2">
@@ -165,25 +239,28 @@ function TimelineItemComponent({
           )}
 
           {/* Expandable Content */}
-          <motion.div
-            initial={false}
-            animate={{ height: isExpanded ? "auto" : 0, opacity: isExpanded ? 1 : 0 }}
-            transition={{ duration: 0.3 }}
-            className="overflow-hidden"
-          >
-            {isExpanded && (
-              <div className="pt-4 border-t border-border">
-                <p className="text-sm text-muted-foreground">
-                  Click to collapse. Add more detailed information here about
-                  your experience, achievements, or responsibilities.
-                </p>
-              </div>
-            )}
-          </motion.div>
+          {item.expandedContent && (
+            <>
+              <motion.div
+                initial={false}
+                animate={{ height: isExpanded ? "auto" : 0, opacity: isExpanded ? 1 : 0 }}
+                transition={{ duration: 0.3 }}
+                className="overflow-hidden"
+              >
+                {isExpanded && (
+                  <div className="pt-4 border-t border-border">
+                    <div className="text-sm text-muted-foreground whitespace-pre-line leading-relaxed">
+                      {item.expandedContent}
+                    </div>
+                  </div>
+                )}
+              </motion.div>
 
-          <button className="text-sm text-[#309898] hover:text-[#FF9F00] transition-colors mt-2">
-            {isExpanded ? "Show less" : "Show more"}
-          </button>
+              <button className="text-sm text-[#309898] hover:text-[#FF9F00] transition-colors mt-2">
+                {isExpanded ? "Show less" : "Show more"}
+              </button>
+            </>
+          )}
         </div>
       </motion.div>
     </motion.div>
