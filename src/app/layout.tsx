@@ -6,6 +6,8 @@ import Navbar from "@/components/ui/Navbar";
 // import ScrollProgressBar from "@/components/ui/ScrollProgressBar";
 import CircularScrollProgress from "@/components/ui/CircularScrollProgress";
 import Footer from "@/components/ui/Footer";
+import AnimatedBackground from "@/components/ui/AnimatedBackground";
+import PageTransition from "@/components/ui/PageTransition";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -52,10 +54,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <AnimatedBackground />
           <CircularScrollProgress />
           <Cursor />
           <Navbar />
-          {children}
+          <PageTransition>{children}</PageTransition>
           <Footer />
         </ThemeProvider>
       </body>

@@ -26,13 +26,29 @@ export default function Cursor() {
       if (
         el.tagName === "A" ||
         el.tagName === "BUTTON" ||
-        el.getAttribute("data-cursor-hover") !== null
+        el.tagName === "INPUT" ||
+        el.tagName === "TEXTAREA" ||
+        el.getAttribute("data-cursor-hover") !== null ||
+        el.closest("a") ||
+        el.closest("button")
       ) {
         setHovered(true);
       }
     };
 
-    const onMouseOut = () => setHovered(false);
+    const onMouseOut = (e: MouseEvent) => {
+      const el = e.target as HTMLElement;
+      const relatedTarget = e.relatedTarget as HTMLElement;
+      if (
+        !relatedTarget ||
+        (relatedTarget.tagName !== "A" &&
+          relatedTarget.tagName !== "BUTTON" &&
+          !relatedTarget.closest("a") &&
+          !relatedTarget.closest("button"))
+      ) {
+        setHovered(false);
+      }
+    };
 
     window.addEventListener("mousemove", move);
     window.addEventListener("mousedown", onClick);
