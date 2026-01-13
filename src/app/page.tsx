@@ -23,19 +23,9 @@ export default function HomePage() {
         "A one-stop toolkit for developers with regex tester, UUID generator, JWT decoder, and more.",
       longDescription:
         "DevToolKit is a comprehensive web application designed to help developers with common tasks. It includes tools for testing regular expressions, generating UUIDs, decoding JWT tokens, and many other utilities that developers use daily. Built with a focus on performance and user experience.",
-      longDescription:
-        "DevToolKit is a comprehensive web application designed to help developers with common tasks. It includes tools for testing regular expressions, generating UUIDs, decoding JWT tokens, and many other utilities that developers use daily. Built with a focus on performance and user experience.",
       image: "devtoolkit.png",
       github: "https://github.com/Shritej-Reddy/devtoolkit",
       live: "https://devtoolkit.vercel.app/",
-      techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-      features: [
-        "Regex tester with real-time matching",
-        "UUID generator with multiple formats",
-        "JWT token decoder and validator",
-        "Color palette generator",
-        "Base64 encoder/decoder",
-      ],
       techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
       features: [
         "Regex tester with real-time matching",
@@ -51,19 +41,9 @@ export default function HomePage() {
         "Daily curated design inspiration dashboard with trending Dribbble and Behance shots.",
       longDescription:
         "InspoDeck aggregates the best design inspiration from Dribbble and Behance, providing designers and developers with a daily curated feed of trending shots. The platform features smart filtering, collections, and a beautiful interface for browsing design work.",
-      longDescription:
-        "InspoDeck aggregates the best design inspiration from Dribbble and Behance, providing designers and developers with a daily curated feed of trending shots. The platform features smart filtering, collections, and a beautiful interface for browsing design work.",
       image: "inspodeck.png",
       github: "https://github.com/Shritej-Reddy/InspoDeck",
       live: "https://inspo-deck.vercel.app/",
-      techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-      features: [
-        "Daily curated design inspiration",
-        "Integration with Dribbble and Behance APIs",
-        "Smart filtering and search",
-        "Save favorite designs",
-        "Responsive design",
-      ],
       techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
       features: [
         "Daily curated design inspiration",
@@ -79,19 +59,9 @@ export default function HomePage() {
         "A clean Pomodoro + deep work tracker with animations, sounds, and keyboard control.",
       longDescription:
         "FocusScape is a productivity application that combines the Pomodoro Technique with deep work tracking. It features beautiful animations, customizable sounds, and full keyboard control for a distraction-free focus experience.",
-      longDescription:
-        "FocusScape is a productivity application that combines the Pomodoro Technique with deep work tracking. It features beautiful animations, customizable sounds, and full keyboard control for a distraction-free focus experience.",
       image: "focusscape.png",
       github: "#",
       live: "#",
-      techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      features: [
-        "Pomodoro timer with customizable intervals",
-        "Deep work session tracking",
-        "Beautiful animations and transitions",
-        "Sound notifications",
-        "Keyboard shortcuts",
-      ],
       techStack: ["React", "TypeScript", "Tailwind CSS", "Framer Motion"],
       features: [
         "Pomodoro timer with customizable intervals",
@@ -116,7 +86,6 @@ export default function HomePage() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto text-center px-4 space-y-6 relative min-h-[70vh] flex flex-col justify-center"
         className="max-w-4xl mx-auto text-center px-4 space-y-6 relative min-h-[70vh] flex flex-col justify-center"
       >
         <div className="relative">
@@ -151,23 +120,6 @@ export default function HomePage() {
             Contact Me
           </a>
         </div>
-
-        {/* Scroll Indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-muted-foreground"
-          >
-            <span className="text-xs">Scroll</span>
-            <ChevronDown className="w-5 h-5" />
-          </motion.div>
-        </motion.div>
 
         {/* Scroll Indicator */}
         <motion.div
@@ -241,24 +193,10 @@ export default function HomePage() {
                       ))}
                     </div>
                   )}
-                  {project.techStack && (
-                    <div className="flex flex-wrap gap-2">
-                      {project.techStack.slice(0, 3).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-1 text-xs bg-muted rounded-md text-muted-foreground"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  )}
                   <div className="flex gap-4 mt-2">
                     <a
                       href={project.live}
                       target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
                       className="text-sm underline hover:text-[#309898] transition"
@@ -270,21 +208,10 @@ export default function HomePage() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
                       className="text-sm underline hover:text-[#CB0404] transition"
                     >
                       GitHub
                     </a>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        setSelectedProject(i);
-                      }}
-                      className="text-sm underline hover:text-[#FF9F00] transition"
-                    >
-                      Details
-                    </button>
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
@@ -301,25 +228,6 @@ export default function HomePage() {
           ))}
         </div>
       </motion.section>
-
-      {/* Skills Section */}
-      <SkillsSection />
-
-      {/* Timeline Section */}
-      <Timeline />
-
-      {/* Stats Section */}
-      <StatsSection />
-
-      {/* Terminal Section */}
-      <Terminal />
-
-      {/* Project Modal */}
-      <ProjectModal
-        project={selectedProject !== null ? projects[selectedProject] : null}
-        isOpen={selectedProject !== null}
-        onClose={() => setSelectedProject(null)}
-      />
 
       {/* Skills Section */}
       <SkillsSection />
