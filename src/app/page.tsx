@@ -74,7 +74,7 @@ export default function HomePage() {
   ];
 
   const { displayedText: typingText } = useTypingEffect(
-    "Frontend engineer focused on building performant interfaces, delightful user interactions, and creative developer tools.",
+    "AI Engineer with strong full-stack expertise, building scalable systems and production-grade software.",
     30,
     500
   );
@@ -96,10 +96,12 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight relative z-10">
-            Hi, I'm <span className="text-[#F4631E]">Shritej</span>
-            <br />I craft <span className="text-[#309898]">clean</span>,<br />
-            <span className="text-[#FF9F00]">interactive</span> web experiences.
+            Hi, I’m <span className="text-[#F4631E]">Shritej</span>
+            <br />I build <span className="text-[#309898]">AI-powered</span>,
+            <br />
+            <span className="text-[#FF9F00]">production-grade</span> software.
           </h1>
+
           <p className="text-lg md:text-xl text-muted-foreground mt-6 max-w-2xl mx-auto min-h-[3rem]">
             {typingText}
             <span className="animate-pulse">|</span>

@@ -7,7 +7,7 @@ export default function Navbar() {
   return (
     <header className="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
       <Link href="/" className="text-2xl font-bold text-[#F4631E]">
-        Shritej.dev
+        Shritej.com
       </Link>
 
       {/* Desktop Links */}
