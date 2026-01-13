@@ -96,7 +96,7 @@ export default function HomePage() {
           </div>
 
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight tracking-tight relative z-10">
-            Hi, I'm <span className="text-[#F4631E]">Shritej</span>
+            Hi, I&apos;m <span className="text-[#F4631E]">Shritej</span>
             <br />I craft <span className="text-[#309898]">clean</span>,<br />
             <span className="text-[#FF9F00]">interactive</span> web experiences.
           </h1>

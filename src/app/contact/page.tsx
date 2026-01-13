@@ -39,10 +39,10 @@ export default function ContactPage() {
     >
       <div>
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-[#F4631E]">
-          Let's Work Together
+          Let&apos;s Work Together
         </h1>
         <p className="text-muted-foreground text-lg mb-6">
-          Have a project in mind? Want to collaborate? Or just say hello? I'd love to hear from you!
+          Have a project in mind? Want to collaborate? Or just say hello? I&apos;d love to hear from you!
         </p>
       </div>
 

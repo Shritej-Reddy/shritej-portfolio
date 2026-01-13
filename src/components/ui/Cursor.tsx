@@ -37,7 +37,6 @@ export default function Cursor() {
     };
 
     const onMouseOut = (e: MouseEvent) => {
-      const el = e.target as HTMLElement;
       const relatedTarget = e.relatedTarget as HTMLElement;
       if (
         !relatedTarget ||

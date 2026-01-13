@@ -115,7 +115,6 @@ export default function Terminal() {
               <TerminalCommand
                 key={index}
                 command={cmd}
-                index={index}
                 onTypingComplete={() => handleTypingComplete(index)}
               />
             ))}
@@ -140,11 +139,9 @@ export default function Terminal() {
 
 function TerminalCommand({
   command,
-  index,
   onTypingComplete,
 }: {
   command: { prompt: string; command: string; output: string; isTyping: boolean };
-  index: number;
   onTypingComplete: () => void;
 }) {
   const { displayedText: commandText } = useTypingEffect(

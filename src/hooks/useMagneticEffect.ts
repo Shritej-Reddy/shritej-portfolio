@@ -41,8 +41,7 @@ export function useMagneticEffect(selector = ".magnetic", strength = 0.15) {
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      elements.forEach((el) => {
-        const element = el as HTMLElement;
+      elements.forEach(() => {
         reset();
       });
     };
