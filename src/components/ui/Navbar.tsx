@@ -7,15 +7,24 @@ export default function Navbar() {
   return (
     <header className="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
       <Link href="/" className="text-2xl font-bold text-[#F4631E]">
-        Shritej.dev
+        Shritej.com
       </Link>
 
       {/* Desktop Links */}
       <nav className="hidden md:flex gap-6 items-center text-muted-foreground">
-        <Link href="/about" className="hover:text-foreground transition">
+        <Link href="/#projects" className="hover:text-foreground transition magnetic">
+          Projects
+        </Link>
+        <Link href="/#skills" className="hover:text-foreground transition magnetic">
+          Skills
+        </Link>
+        <Link href="/#experience" className="hover:text-foreground transition magnetic">
+          Experience
+        </Link>
+        <Link href="/about" className="hover:text-foreground transition magnetic">
           About
         </Link>
-        <Link href="/contact" className="hover:text-foreground transition">
+        <Link href="/contact" className="hover:text-foreground transition magnetic">
           Contact
         </Link>
         <ThemeToggle />

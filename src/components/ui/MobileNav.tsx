@@ -26,6 +26,9 @@ export default function MobileNav() {
       {open && (
         <div className="fixed inset-0 z-[9998] bg-background text-foreground flex flex-col items-center justify-center gap-8 text-xl">
           <Link href="/" onClick={closeMenu}>Home</Link>
+          <Link href="/#projects" onClick={closeMenu}>Projects</Link>
+          <Link href="/#skills" onClick={closeMenu}>Skills</Link>
+          <Link href="/#experience" onClick={closeMenu}>Experience</Link>
           <Link href="/about" onClick={closeMenu}>About</Link>
           <Link href="/contact" onClick={closeMenu}>Contact</Link>
           <ThemeToggle />
