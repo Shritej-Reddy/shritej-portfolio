@@ -21,7 +21,7 @@ const commands = [
   {
     prompt: "$",
     command: "cat about.txt",
-    output: "Frontend engineer passionate about building\ndelightful web experiences with React & Next.js",
+    output: "AI Full-Stack Engineer passionate about building intelligent, user-centric products from model to UI.",
     delay: 1500,
   },
 ];
