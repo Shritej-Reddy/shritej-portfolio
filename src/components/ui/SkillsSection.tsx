@@ -165,12 +165,24 @@ const categoryIcons: Record<string, React.ReactNode> = {
 
 export default function SkillsSection() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [showAll, setShowAll] = useState<boolean>(false);
   const categories = ["All", ...Array.from(new Set(skills.map((s) => s.category)))];
 
   const filteredSkills =
     selectedCategory === "All"
       ? skills
       : skills.filter((skill) => skill.category === selectedCategory);
+
+  // When category changes, reset showAll
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+    setShowAll(false);
+  };
+
+  // Determine which skills to display
+  const shouldLimitSkills = selectedCategory === "All" && !showAll;
+  const displayedSkills = shouldLimitSkills ? filteredSkills.slice(0, 15) : filteredSkills;
+  const hasMoreSkills = filteredSkills.length > 15 && selectedCategory === "All";
 
   return (
     <motion.section
@@ -190,7 +202,7 @@ export default function SkillsSection() {
         {categories.map((category) => (
           <button
             key={category}
-            onClick={() => setSelectedCategory(category)}
+            onClick={() => handleCategoryChange(category)}
             className={`px-4 py-2 rounded-md text-sm font-medium transition-all ${
               selectedCategory === category
                 ? "bg-[#309898] text-white"
@@ -204,10 +216,22 @@ export default function SkillsSection() {
 
       {/* Skills Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredSkills.map((skill, index) => (
+        {displayedSkills.map((skill, index) => (
           <SkillCard key={skill.name} skill={skill} index={index} />
         ))}
       </div>
+
+      {/* Show More Button */}
+      {hasMoreSkills && (
+        <div className="flex justify-center mt-8">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="px-6 py-3 rounded-md text-sm font-medium transition-all border border-[#309898] text-[#309898] hover:bg-[#309898] hover:text-white"
+          >
+            {showAll ? "Show less" : `Show more (${filteredSkills.length - 15} more)`}
+          </button>
+        </div>
+      )}
     </motion.section>
   );
 }
