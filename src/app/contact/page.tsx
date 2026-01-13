@@ -11,6 +11,8 @@ export default function ContactPage() {
   });
   const [copied, setCopied] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const email = 'tejureddy47@gmail.com';
 
@@ -20,14 +22,38 @@ export default function ContactPage() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
+      setSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -98,15 +124,26 @@ export default function ContactPage() {
                 placeholder="Tell me about your project..."
               />
             </div>
+            {error && (
+              <div className="p-3 bg-destructive/10 border border-destructive/20 rounded-md text-sm text-destructive">
+                {error}
+              </div>
+            )}
+            
             <button
               type="submit"
-              disabled={submitted}
+              disabled={submitted || isSubmitting}
               className="w-full px-6 py-3 bg-[#309898] text-white rounded-md hover:bg-[#309898]/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {submitted ? (
                 <>
                   <Check className="w-5 h-5" />
                   Message Sent!
+                </>
+              ) : isSubmitting ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Sending...
                 </>
               ) : (
                 <>
@@ -203,7 +240,7 @@ export default function ContactPage() {
       >
         <h3 className="text-lg font-semibold mb-4 text-center">Or use the form below</h3>
         <iframe
-          src="https://tally.so/r/3lZOkk"
+          src="https://tally.so/r/Pd9AEP"
           width="100%"
           height="500"
           className="rounded-md border border-muted"
