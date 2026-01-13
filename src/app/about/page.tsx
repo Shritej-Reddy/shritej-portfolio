@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Download, MapPin, Coffee, Code, BookOpen, Music } from 'lucide-react';
+import { Download, MapPin, Coffee, Code, BookOpen, Music, Brain } from 'lucide-react';
 
 export default function AboutPage() {
   return (
@@ -16,13 +16,15 @@ export default function AboutPage() {
           About Me
         </h1>
         <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-          I&apos;m a front-end developer who loves crafting functional, beautiful web experiences.
-          I enjoy building tools, interfaces, and interactive moments that feel alive and intuitive.
+          I&apos;m an AI Full-Stack Engineer who enjoys building intelligent, scalable software from the ground up. I work across frontend, backend, cloud, and AI layers to turn complex problems into reliable, production-ready systems with thoughtful user experiences.
+        </p>
+        <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+          I&apos;m particularly interested in how AI capabilities can be embedded into real products—not as demos, but as dependable features that improve how users interact with software.
         </p>
         <div className="flex items-center gap-4 text-muted-foreground">
           <div className="flex items-center gap-2">
             <MapPin className="w-4 h-4" />
-            <span>Available for opportunities</span>
+            <span>Available for Opportunities</span>
           </div>
         </div>
       </div>
@@ -37,16 +39,13 @@ export default function AboutPage() {
         <h2 className="text-2xl font-semibold text-[#309898]">Who I Am</h2>
         <div className="space-y-4 text-muted-foreground leading-relaxed">
           <p>
-            I&apos;m passionate about creating digital experiences that are not just functional,
-            but delightful. My journey in web development started with curiosity about how things
-            work on the internet, and it has evolved into a career focused on building performant,
-            accessible, and beautiful interfaces.
+            I&apos;m passionate about building software that is both technically solid and genuinely useful. My journey started with curiosity about how the web works, and it has evolved into designing and engineering end-to-end systems—from clean interfaces to robust APIs, data pipelines, and AI-powered workflows.
           </p>
           <p>
-            When I&apos;m not coding, you&apos;ll find me exploring new technologies, contributing
-            to open-source projects, or working on side projects that solve real-world problems.
-            I believe in continuous learning and staying updated with the latest trends in web
-            development.
+            I enjoy working on problems that require systems thinking, performance optimization, and careful tradeoffs between usability, scalability, and reliability.
+          </p>
+          <p>
+            Outside of core product work, I actively explore applied AI, contribute to side projects, and experiment with new ideas that bridge engineering and intelligence. I strongly believe in continuous learning and building things that hold up in the real world.
           </p>
         </div>
       </motion.div>
@@ -60,10 +59,11 @@ export default function AboutPage() {
       >
         <h2 className="text-2xl font-semibold text-[#FF9F00]">Interests & Hobbies</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <InterestCard icon={<Code />} title="Coding" />
+          <InterestCard icon={<Code />} title="Coding & building side projects" />
+          <InterestCard icon={<Brain />} title="Exploring AI & system design" />
           <InterestCard icon={<BookOpen />} title="Reading" />
           <InterestCard icon={<Music />} title="Music" />
-          <InterestCard icon={<Coffee />} title="Coffee" />
+          <InterestCard icon={<Coffee />} title="Coffee ☕" />
         </div>
       </motion.div>
 
@@ -79,15 +79,23 @@ export default function AboutPage() {
           <ul className="space-y-2 text-muted-foreground">
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#309898] rounded-full"></span>
-              Advanced React patterns and performance optimization
+              Applied Machine Learning & AI Engineering
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#FF9F00] rounded-full"></span>
-              Three.js and WebGL for 3D web experiences
+              Designing and serving AI-powered features in production
             </li>
             <li className="flex items-center gap-2">
               <span className="w-2 h-2 bg-[#F4631E] rounded-full"></span>
-              System design and architecture patterns
+              System design for scalable, distributed applications
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#309898] rounded-full"></span>
+              Performance optimization across frontend, backend, and APIs
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="w-2 h-2 bg-[#FF9F00] rounded-full"></span>
+              Modern web patterns with React & Next.js (at scale)
             </li>
           </ul>
         </div>
