@@ -1,15 +1,7 @@
 import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
 
-// Dynamically import Resend to handle cases where it's not installed
-let Resend: any;
-let resend: any;
-
-try {
-  Resend = require('resend').Resend;
-  resend = new Resend(process.env.RESEND_API_KEY);
-} catch (error) {
-  console.warn('Resend package not installed. Please run: npm install resend', error);
-}
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function POST(request: Request) {
   try {
@@ -43,7 +35,7 @@ export async function POST(request: Request) {
     }
 
     // Send email using Resend
-    const { data, error } = await resend.emails.send({
+    const { error } = await resend.emails.send({
       from: 'Portfolio Contact <onboarding@resend.dev>', // Update with your verified domain
       to: process.env.CONTACT_EMAIL || 'tejureddy47@gmail.com',
       replyTo: email,
