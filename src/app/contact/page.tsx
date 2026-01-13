@@ -12,7 +12,7 @@ export default function ContactPage() {
   const [copied, setCopied] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const email = 'shritej@example.com'; // Replace with actual email
+  const email = 'tejureddy47@gmail.com';
 
   const copyEmail = () => {
     navigator.clipboard.writeText(email);
